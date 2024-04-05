@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home_page/css/home_page.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <title>Website Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .nav li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav li a:hover {
+            color: #ffc107;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="logo">Python Nest</span>
+        <ul class="nav">
+            <li><a href="#">Форум</a></li>
+            <li><a href="#">Учебные материалы</a></li>
+            <li><a href="#">Тесты</a></li>
+            <li><a href="#">Новости</a></li>
+        </ul>
+    </div>
+    <home_page>
+        {% block content %}
+        {% endblock %}
+    </home_page>
+</body>
+</html>
